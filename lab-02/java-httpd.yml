@@ -10,8 +10,12 @@
     service: name=httpd state=started enabled=yes
 
 
-- hosts: node02
-  become: true
+-  hosts: node02
+   become: true
   tasks:
   - name: Install default-jdk
-    yum: name=java-1.8.0-openjdk state=present
+   yum: name=java-1.8.0-openjdk state=present
+   when: ansible_os_family == "RedHat"
+   - name: Install default-jdk for Debian
+     apt: name=java-1.8.0-openjdk state=present
+     when: ansible_os_family == "Debian" 
