@@ -4,5 +4,9 @@ ansible-node02 ansible_ssh_host=ec2-18-224-200-65.us-east-2.compute.amazonaws.co
 
 [dbserver]
 ansible-node01
+[dbserver:vars]
+my_group_var1=dbserver
 [webservers]
 ansible-node02
+[webservers:vars]
+my_group_var1=web
