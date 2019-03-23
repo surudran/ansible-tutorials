@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: ansible-node01
   tasks:
   - name: Create files on loop
     debug: var=item
