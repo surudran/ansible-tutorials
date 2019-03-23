@@ -35,11 +35,11 @@
     #   debug:
     #     var: hostvars[inventory_hostname]
 
-# - hosts: all
-#   name: Setting up the hostnames
-#   tasks:
-#   - hostname: name="{{ inventory_hostname }}"
-#     become: yes
+- hosts: all
+  name: Setting up the hostnames
+  tasks:
+  - hostname: name="{{ inventory_hostname }}"
+    become: yes
 
 
 
